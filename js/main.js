@@ -1,3 +1,4 @@
+// calculate button part
 document.getElementById('btn-calculate').addEventListener('click', function () {
     const totalExpenses = getTotalExpenses();
     const totalBalance = getTotalBalance()
@@ -6,6 +7,7 @@ document.getElementById('btn-calculate').addEventListener('click', function () {
 })
 
 
+// save button part
 document.getElementById('btn-save').addEventListener('click', function () {
     const inputIncomeValue = getInputValueField('input-income-field');
     const inputSaveValue = getInputValueField('input-save-field');
