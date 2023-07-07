@@ -3,6 +3,10 @@ function getInputValueField (elementId) {
     const inputValueField = document.getElementById(elementId);
     const inputValueFieldString = inputValueField.value;
     const inputValue = parseInt(inputValueFieldString);
+    if (isNaN(inputValue)) {
+        inputValueField.value = '';
+        return;
+    }
     return inputValue;
 }
 
@@ -10,6 +14,9 @@ function getInputValueField (elementId) {
 // display value part
 function displayValue (elementId, valueId) {
     const displayElementValue = document.getElementById(elementId);
+    if (isNaN(valueId)) {
+        return;
+    }
     displayElementValue.innerText = valueId;
 }
 
@@ -30,4 +37,18 @@ function getTotalBalance () {
     const totalExpenses = getTotalExpenses();
     const totalBalance = inputIncomeValue - totalExpenses;
     return totalBalance;
+}
+
+// input field value clear part
+function inputValueClear (elementId) {
+    const inputValueField = document.getElementById(elementId);
+    inputValueField.value = '';
+}
+
+function inputClear () {
+    inputValueClear('input-income-field');
+    inputValueClear('input-food-field');
+    inputValueClear('input-rent-field');
+    inputValueClear('input-clothes-field');
+    inputValueClear('input-save-field');
 }

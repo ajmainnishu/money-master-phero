@@ -2,6 +2,9 @@
 document.getElementById('btn-calculate').addEventListener('click', function () {
     const totalExpenses = getTotalExpenses();
     const totalBalance = getTotalBalance()
+    if (isNaN(totalExpenses)) {
+        return;
+    }
     displayValue('display-total-expenses', totalExpenses);
     displayValue('display-balance', totalBalance);
 })
@@ -16,4 +19,5 @@ document.getElementById('btn-save').addEventListener('click', function () {
     const totalBalance = getTotalBalance();
     const remainingBalance = totalBalance - savingAmount;
     displayValue('remaining-balance', remainingBalance);
+    inputClear();
 })
